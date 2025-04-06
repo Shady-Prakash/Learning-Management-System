@@ -15,9 +15,12 @@ export const ourFileRouter = {
     // Set permissions and file types for this FileRoute
     .middleware(() => handleAuth())
     .onUploadComplete(() => {}),
+  // campaignImage: f({ image: { maxFileSize: "4MB", maxFileCount: 1 } })
+  //   .middleware(() => handleAuth())
+  //   .onUploadComplete(() => {}),
   courseAttachment: f(["text", "image", "video", "audio","pdf"])
     .middleware(() => handleAuth())
-    .onUploadComplete(() => {}),
+    .onUploadComplete((res) => {console.log(res)}),
   chapterVideo: f({ video: { maxFileCount:1, maxFileSize: "512GB" } })
     .middleware(() => handleAuth())
     .onUploadComplete(() => {})
