@@ -1,12 +1,17 @@
 {
-  "name": "the-big-alliance",
+  "name": "lms",
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d dist",
+
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint:fix": "eslint --fix",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,scss,md,json}' --config ./.prettierrc",
     "seed": "node scripts/seed.ts"
   },
   "dependencies": {
