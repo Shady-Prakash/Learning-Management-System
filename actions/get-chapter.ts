@@ -17,7 +17,7 @@ export const getChapter = async ({
       where: {
         userId_courseId: {
           userId,
-          courseId: courseId,
+          courseId,
         }
       }
     });
@@ -80,7 +80,7 @@ export const getChapter = async ({
       where: {
         userId_chapterId: {
           userId,
-          chapterId: chapterId,
+          chapterId,
         }
       }
     });

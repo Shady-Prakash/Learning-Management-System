@@ -33,7 +33,7 @@ export async function POST(
     });
 
     if (purchase) {
-      return new NextResponse("Already purchased", { status: 500 })
+      return new NextResponse("Already purchased", { status: 400 })
     }
 
     if (!course) {
@@ -91,6 +91,6 @@ export async function POST(
     return NextResponse.json({ url: session.url });
   } catch (error) {
     console.log("[COURSE_ID_CHECKOUT]", error);
-    return new NextResponse("Internal", { status: 500 })
+    return new NextResponse("Internal Error", { status: 500 })
   }
 }
