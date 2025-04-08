@@ -8,9 +8,9 @@ export async function PUT(
   { params }: { params: { courseId: string; } }
 ) {
   try {
-    const { userId } = auth();
+    const { userId, orgRole } = auth();
 
-    if(!userId) {
+    if(!userId || orgRole === "org:member") {
       return new NextResponse("Unauthorized", { status: 401 });
     }
 

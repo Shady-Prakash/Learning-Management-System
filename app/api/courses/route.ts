@@ -7,10 +7,10 @@ export async function POST(
   req: Request,
 ) {
   try {
-    const { userId } = auth();
+    const { userId, orgRole } = auth();
     const { title } = await req.json();
 
-    if(!userId) {
+    if(!userId || orgRole === "org:member") {
       return new NextResponse("Unauthorized", { status: 401 });
     }
 

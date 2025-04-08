@@ -7,10 +7,10 @@ export async function PUT(
   { params }: { params: { courseId: string; chapterId: string } }
 ) {
   try {
-    const { userId } = auth();
+    const { userId, orgRole } = auth();
     const { isCompleted } = await req.json();
 
-    if(!userId) {
+    if(!userId || orgRole === "org:member") {
       return new NextResponse("Unauthorized", { status: 401 });
     }
 

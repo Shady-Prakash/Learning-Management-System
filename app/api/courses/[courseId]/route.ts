@@ -14,9 +14,9 @@ export async function DELETE(
   { params }:{ params: { courseId: string } }
 ) {
   try {
-    const { userId } = auth();
+    const { userId, orgRole } = auth();
 
-    if (!userId) {
+    if (!userId || orgRole === "org:member") {
       return new NextResponse("Unauthorized", { status: 401 });
     }
 
@@ -62,11 +62,11 @@ export async function PATCH(
   { params }:{ params: { courseId: string } }
 ) {
   try{
-    const {userId} = auth();
+    const {userId, orgRole} = auth();
     const{courseId} = params;
     const values = await req.json();
 
-    if(!userId) {
+    if(!userId || orgRole === "org:member") {
       return new NextResponse("unauthorized", {status: 401});
     }
 

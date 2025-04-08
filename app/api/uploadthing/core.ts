@@ -4,8 +4,10 @@ import { createUploadthing, type FileRouter } from "uploadthing/next";
 const f = createUploadthing();
  
 const handleAuth = () => {
-  const {userId} = auth();
-  if(!userId) throw new Error("Unauthorized");
+  const {userId, orgRole} = auth();
+  const isAuthorized = orgRole === "org:super_admin" || orgRole === "org:admin";
+  
+  if(!userId || !isAuthorized) throw new Error("Unauthorized");
   return{userId};
 } 
 // FileRouter for your app, can contain multiple FileRoutes

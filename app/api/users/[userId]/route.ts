@@ -6,9 +6,9 @@ export async function DELETE(
   { params }:{ params: { userId: string } }
 ) {
   try {
-    const { userId } = auth();
+    const { userId, orgRole } = auth();
 
-    if (!userId) {
+    if (!userId || orgRole === "org:member") {
       return new NextResponse("Unauthorized", { status: 401 });
     }
     await clerkClient.users.deleteUser(params.userId);

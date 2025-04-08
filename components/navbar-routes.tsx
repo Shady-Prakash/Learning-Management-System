@@ -1,14 +1,16 @@
 "use client";
 
-import { UserButton } from "@clerk/nextjs";
+import { useAuth, UserButton } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
 import { LogOut } from "lucide-react";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
+
 import { SearchInput } from "./search-input";
 
 export const NavbarRoutes = () => {
+  const { orgRole } = useAuth();
   const pathname = usePathname();
 
   const isAdminPage = pathname?.startsWith("/admin");
@@ -30,14 +32,14 @@ export const NavbarRoutes = () => {
               Exit
             </Button>
           </Link>
-        ) : (
+        ) : orgRole === "org:super_admin" || orgRole === "org:admin" ? (
           <Link href="/admin/courses">
             <Button size="sm" variant="ghost">
               Admin mode
             </Button>
           </Link>
-        )}
-        <UserButton afterSignOutUrl="/" />
+        ) : null }
+        <UserButton afterSignOutUrl="/sign-in" />
       </div>
     </>
   )
