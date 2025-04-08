@@ -1,12 +1,13 @@
 'use client'
 
 import { useOrganization } from '@clerk/nextjs'
-import { DataTable } from './_components/data-table'
-import { columns } from './_components/columns'
 import { OrgInvitationsParams, OrgMembershipRequestsParams } from '@/lib/organizations'
 
+import { DataTable } from './_components/data-table'
+import { columns } from './_components/columns'
+
 // List of pending invitations to an organization.
-export const InvitationList = () => {
+const InvitationList = () => {
   const { isLoaded, invitations } = useOrganization({
     ...OrgInvitationsParams,
     ...OrgMembershipRequestsParams

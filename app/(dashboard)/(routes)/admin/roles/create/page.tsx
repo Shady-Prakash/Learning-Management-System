@@ -36,11 +36,15 @@ const formSchema = z.object({
 
 // Form to invite a new member to the organization.
 export const InviteMember = ({ email, role } :InviteMemberProps) => {
-  const {orgRole} = useAuth();
-  const { isLoaded, organization, invitations } = useOrganization(OrgInvitationsParams)
   const router = useRouter();
+  
+  const {orgRole} = useAuth();
+
+  const { isLoaded, organization, invitations } = useOrganization(OrgInvitationsParams)
+
   const [disabled, setDisabled] = useState(false)
   const [fetchedRoles, setRoles] = useState<OrganizationCustomRoleKey[]>([])
+
   const isPopulated = useRef(false)
 
   useEffect(() => {
