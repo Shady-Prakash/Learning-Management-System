@@ -8,7 +8,7 @@ import { OrgMembersParams } from '@/lib/organizations'
 
 // List of organization memberships. Administrators can
 // change member roles or remove members from the organization.
-export const ManageRoles = () => {
+const ManageRoles = () => {
   const { isLoaded, memberships } = useOrganization(OrgMembersParams)
 
   const organizationUsers = memberships?.data?.map((mem) => {

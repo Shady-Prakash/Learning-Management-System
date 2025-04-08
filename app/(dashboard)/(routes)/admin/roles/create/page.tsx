@@ -35,7 +35,7 @@ const formSchema = z.object({
 });
 
 // Form to invite a new member to the organization.
-export const InviteMember = ({ email, role } :InviteMemberProps) => {
+const InviteMember = ({ email, role } :InviteMemberProps) => {
   const router = useRouter();
   
   const {orgRole} = useAuth();
