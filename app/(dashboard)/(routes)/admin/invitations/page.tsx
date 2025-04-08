@@ -3,27 +3,13 @@
 import { useOrganization } from '@clerk/nextjs'
 import { DataTable } from './_components/data-table'
 import { columns } from './_components/columns'
-
-export const OrgInvitationsParams = {
-  invitations: {
-    pageSize: 5,
-    keepPreviousData: true,
-  },
-}
-
-export const MembershipRequestsParams = {
-  membershipRequests: {
-    pageSize: 5,
-    keepPreviousData: true,
-  },
-}
-
+import { OrgInvitationsParams, OrgMembershipRequestsParams } from '@/lib/organizations'
 
 // List of pending invitations to an organization.
 export const InvitationList = () => {
   const { isLoaded, invitations } = useOrganization({
     ...OrgInvitationsParams,
-    ...MembershipRequestsParams
+    ...OrgMembershipRequestsParams
   })
 
   if (!isLoaded) {

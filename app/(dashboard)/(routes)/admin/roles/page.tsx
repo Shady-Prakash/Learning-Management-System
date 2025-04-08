@@ -4,13 +4,7 @@ import { useOrganization } from '@clerk/nextjs'
 import { DataTable } from './_components/data-table'
 import { columns } from './_components/columns'
 import SelectRole from './_components/select-role'
-
-export const OrgMembersParams = {
-  memberships: {
-    pageSize: 5,
-    keepPreviousData: true,
-  },
-}
+import { OrgMembersParams } from '@/lib/organizations'
 
 // List of organization memberships. Administrators can
 // change member roles or remove members from the organization.
