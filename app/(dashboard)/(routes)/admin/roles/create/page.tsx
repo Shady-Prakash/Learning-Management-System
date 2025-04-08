@@ -14,17 +14,11 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useRouter } from "next/navigation";
+import { OrgInvitationsParams } from "@/lib/organizations";
 
 interface InviteMemberProps {
   email: string | undefined; 
   role: OrganizationCustomRoleKey | undefined[];
-}
-
-export const OrgInvitationsParams = {
-  invitations: {
-    pageSize: 5,
-    keepPreviousData: true,
-  },
 }
 
 const formSchema = z.object({
@@ -144,7 +138,7 @@ export const InviteMember = ({ email, role } :InviteMemberProps) => {
               </FormItem>
               )}
             />
-            <Button type="submit" disabled={!isValid || isSubmitting}>
+            <Button type="submit" disabled={!isLoaded || isSubmitting}>
               Invite
             </Button>
           </form>

@@ -68,7 +68,7 @@ export function DataTable<TData, TValue>({
           className="max-w-sm"
         />
         {orgRole !=="org:member" ? 
-        <Link href="/dashboard/admin/roles/create">
+        <Link href="/admin/roles/create">
           <Button>
             <PlusCircle className="h-4 w-4 mr-2"/>
             Invite
