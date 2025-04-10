@@ -32,7 +32,7 @@ const adminRoutes = [
   {
     icon: UserCog,
     label: "Users",
-    href: "/admin/roles"
+    href: "#"
   },
 ]
 
