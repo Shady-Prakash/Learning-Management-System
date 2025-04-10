@@ -1,7 +1,10 @@
-Project Description
-The Big Alliance Donation Website helps users donate to various charity campaigns. It supports both individual and company donations, and administrators can manage campaigns and view reports. The site is designed for mobile and desktop, ensuring accessibility and security with multi-factor authentication and PayPal payments.
+#Project Description
+The Course All is a learning management system. It supports both admin and user manage the courses. The dashboard is designed for mobile and desktop, ensuring accessibility and security with multi-factor authentication using clerk and stripe payment.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+##Running locally in development mode
+`git clone https://github.com/iaincollins/nextjs-starter.git
+npm install
+npm run dev`
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
