@@ -11,8 +11,8 @@ The Course All is a learning management system. It supports both admin and user 
 
 ```
 git clone https://github.com/iaincollins/nextjs-starter.git`
-npm install
-npm run dev
+npm install or yarn install
+npm run dev or yarn run dev
 ```
 
 
