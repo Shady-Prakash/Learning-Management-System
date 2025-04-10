@@ -1,6 +1,6 @@
 # Project Description
 
-The Course All is a learning management system. It supports both admin and user manage the courses. The dashboard is designed for mobile and desktop, ensuring accessibility and security with multi-factor authentication using clerk and stripe payment.
+The Course All is a full-stack learning management system. It supports both admin and user manage the courses. The dashboard is designed for mobile and desktop, ensuring accessibility and security with multi-factor authentication using clerk and stripe payment.
 
 
 
