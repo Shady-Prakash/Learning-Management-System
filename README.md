@@ -10,7 +10,7 @@ The Course All is a full-stack learning management system. It supports both admi
 #### To get started, just clone the repository and run yarn install && yarn run dev or npm install && npm run dev:
 
 ```
-git clone https://github.com/iaincollins/nextjs-starter.git`
+git clone https://github.com/Shady-Prakash/Learning-Management-System.git`
 npm install or yarn install
 npm run dev or yarn run dev
 ```
